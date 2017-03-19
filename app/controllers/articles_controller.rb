@@ -4,7 +4,11 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-    @articles = current_user.articles.all
+    if current_user.present?
+      @articles = current_user.articles.all
+    else
+      @articles = Article.all
+    end
   end
 
   # GET /articles/1
