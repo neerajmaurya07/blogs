@@ -14,7 +14,7 @@
   <tbody>
     <% @articles.each do |article| %>
       <tr>
-        <td><%= article.title %></td>
+        <td><a href="/articles/<%= article.id %>"><%= article.title %></a></td>
         <td><%= article.text %></td>
         <% if current_user.present? %>
           <td><%= link_to 'Show', article %></td>
