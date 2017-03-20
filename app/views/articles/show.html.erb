@@ -22,6 +22,12 @@
       <%= comment.body %>
     </p>
   <% end %>
+  <p>
+    Tags:
+    <% @article.tags.each do |tag| %>
+      <%= link_to tag.name, tag_path(tag) %>
+    <% end %>
+  </p>
   <h2>Add a comment:</h2>
   <%= form_for([@article, @article.comments.build]) do |f| %>
     <p>
