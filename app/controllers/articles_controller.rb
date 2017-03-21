@@ -28,7 +28,6 @@ class ArticlesController < ApplicationController
   # POST /articles
   # POST /articles.json
   def create
-    byebug
     @article = Article.new(article_params)
     respond_to do |format|
       if @article.save
