@@ -11,6 +11,8 @@
 // about supported directives.
 //
 //= require jquery
+//= require select2
+//= require select2-full
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .

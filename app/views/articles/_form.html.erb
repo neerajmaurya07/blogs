@@ -22,11 +22,19 @@
   </div>
     <p>
     <%= f.label :tag_list %><br />
-    <%= f.select :tag_list, options_for_select(["Free", "Basic", "Advanced", "Super Platinum"]), :selected =>:tag_list %>
+    <%#= f.select :tag_list, id: "e1", options_for_select(["Free", "Basic", "Advanced", "Super Platinum"]), :selected =>:tag_list %>
+    <select name="article[tag_list]" id="e1">
+        <option >Ruby on Rails</option>
+        <option >Dot Net</option>
+        <option >C#</option>
+        <option >Java</option>
+    </select>
   </p>
 
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
-
+<script>
+  $(document).ready(function() { $("#e1").select2(); });
+</script>
