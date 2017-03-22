@@ -53,3 +53,5 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem "select2-rails"
+gem 'omniauth'
+gem 'omniauth-facebook'
