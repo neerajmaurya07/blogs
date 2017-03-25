@@ -17,7 +17,9 @@
       <tr>
         <td><a href="/articles/<%= article.id %>"><%= article.title %></a></td>
         <td><%= article.text %></td>
-        <td><%= raw article.tags.map(&:name).map { |t| link_to t, tag_path(t) }.join(', ') %>
+        <td><% article.tags.each do |tag| %>
+      <%= link_to tag.name, tag_path(tag) %>
+    <% end %>
         </td>
         <% if current_user.present? %>
           <td><%= link_to 'Show', article %></td>
