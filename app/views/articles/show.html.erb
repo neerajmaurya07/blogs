@@ -9,7 +9,21 @@
   <strong>Text:</strong>
   <%= @article.text %>
 </p>
-
+<h2>Question</h2>
+<p>
+  <% for question in @article.questions %>
+    <li>
+      <%=h question.content %>
+      <li>
+        <% for answer in question.answers %>
+          <li>
+            <%=h answer.content %>
+          </li>
+  <%end%>
+      </li>
+    </li>
+  <%end%>
+</p>
 <h2>Comments</h2>
   <% @article.comments.each do |comment| %>
     <p>

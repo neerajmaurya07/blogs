@@ -19,10 +19,18 @@ class ArticlesController < ApplicationController
   # GET /articles/new
   def new
     @article = Article.new
+    3.times do
+      question = @article.questions.build
+      4.times { question.answers.build }
+    end  
   end
 
   # GET /articles/1/edit
   def edit
+    3.times do
+      question = @article.questions.build
+      4.times { question.answers.build }
+    end  
   end
 
   # POST /articles
@@ -72,6 +80,6 @@ class ArticlesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def article_params
-      params.require(:article).permit(:title, :text, :user_id, :tag_list)
+      params.require(:article).permit(:title, :text, :user_id, :tag_list, {questions_attributes:[:id, :content, {answers_attributes: [:id, :content]}]})
     end
 end

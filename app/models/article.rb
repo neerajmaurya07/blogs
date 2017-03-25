@@ -3,9 +3,8 @@ class Article < ApplicationRecord
 	has_many :taggings
 	has_many :tags, through: :taggings
 	belongs_to :user
-
-	
-
+	has_many :questions	
+	accepts_nested_attributes_for :questions, :reject_if => lambda { |a| a[:content].blank? },  :allow_destroy => true
 	def self.tagged_with(name)
 	  Tag.find_by_name!(name).articles
 	end

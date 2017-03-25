@@ -23,12 +23,13 @@
     <p>
     <%= f.label :tag_list %><br />
      <%= f.text_field :tag_list %>
-   <!--  <select name="article[tag_list]" id="e1">
-        <option >Ruby on Rails</option>
-        <option >Dot Net</option>
-        <option >C#</option>
-        <option >Java</option>
-    </select> -->
+  
+  </p>
+  <p>
+    <%= f.fields_for :questions do |builder|%>
+      
+      <%= render "question_fields", :f => builder %>
+    <%end%>
   </p>
 
   <div class="actions">
