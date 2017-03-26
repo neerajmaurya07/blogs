@@ -22,7 +22,16 @@
   </div>
     <p>
     <%= f.label :tag_list %><br />
-     <%= f.text_field :tag_list %>
+     <%#= f.text_field :tag_list %>
+      <div class="form-group">
+      <select name="article[tag_list]" id="lunch" class="selectpicker" data-live-search="true" title="Please select a lunch ...">
+        <option>Hot Dog, Fries and a Soda</option>
+        <option>Burger, Shake and a Smile</option>
+        <option>Sugar, Spice and all things nice</option>
+        <option>Baby </option>
+        <option>A dsad</option>
+      </select>
+    </div>
   
   </p>
   <p>
@@ -37,5 +46,5 @@
   </div>
 <% end %>
 <script>
-  $(document).ready(function() { $("#e1").select2(); });
+  $(document).ready(function() {$('.selectpicker').selectpicker();}
 </script>
